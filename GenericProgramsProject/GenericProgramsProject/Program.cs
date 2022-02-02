@@ -10,20 +10,15 @@ namespace GenericProgramsProject
     {
         static void Main(string[] args)
         {
-            //Array
-            int[] intArr = { 100, 80, 10, 50, 5 };
-            double[] doubleArr = { 92.8, 40.5, 60.6, 35.79, 78.8 };
-            string[] stringArr = { "kiran", "gourav", "Ankit" };
+            //Instanse variables.
+            int first = 20, second = 300, third = 40;
+            double f = 40.5, s = 60.6, t = 35.79;
+            string firstName = "kiran", secondName = "vikram", thirdName = "pramod";
 
-            /* Creating object of FindMaxValue Class passing array to the Constructor       
-             * Calling PrintMaxValue Method to get Max value.
-             */
-            FindMaxValue<int> findMaxValue = new FindMaxValue<int>(intArr);
-            Console.WriteLine("Max value is: " + findMaxValue.PrintMaxValue());
-            FindMaxValue<double> findMaxValue2 = new FindMaxValue<double>(doubleArr);
-            Console.WriteLine("Max Value is :" + findMaxValue2.PrintMaxValue());
-            FindMaxValue<string> findMaxValue3 = new FindMaxValue<string>(stringArr);
-            Console.WriteLine("Max Value is: " + findMaxValue3.PrintMaxValue());
+            //Creating object of FindMaxValueClass        
+            Console.WriteLine("Max Integer number is:{0} out of numbers : {1} , {2} , {3} ", new FindMaxValue<int>().FindMax(first, second, third), first, second, third + "\n");
+            Console.WriteLine("Max double number is:{0} out of numbers : {1} , {2} , {3} ", new FindMaxValue<double>().FindMax(f, s, t), f, s, t + "\n");
+            Console.WriteLine("Max String Value is:{0} out of values : {1} , {2} , {3} ", new FindMaxValue<string>().FindMax(firstName, secondName, thirdName), firstName, secondName, thirdName + "\n");
             Console.ReadLine();
         }
     }

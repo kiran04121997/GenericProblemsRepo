@@ -7,36 +7,36 @@ using System.Threading.Tasks;
 namespace GenericProgramsProject
 {
 
-    public class FindMaxValue<T> where T : IComparable
+   public class FindMaxValue<T> where T : IComparable
     {
-        /* UC- 5 Implemented
-         * Using Generic Method to get Max Value.
+        /* Using Generic Class and Method to get Max value
+         * extending IComparable so that that we can use CompareTo method
          */
-        //Instance Variables
-        public T[] value;
-        //Constructor
-        public FindMaxValue(T[] value)
+        public T FindMax(T fisrtNum, T secondNum, T thirdNum)
         {
-            this.value = value;
-        }
-        //Generic Method to sort Array in asscending order
-        public T[] Sort(T[] values)
-        {
-            Array.Sort(values);
-            return values;
-        }
-        //Method to get Max value After Sorting.
-        public T MaxValue(params T[] values)
-        {
-            var sortedValues = Sort(values);
-            var s = sortedValues.Length - 1;
-            return sortedValues[s];
-        }
-        //Using Generic Method to get Max value
-        public T PrintMaxValue()
-        {
-            T max = MaxValue(this.value);
-            return max;
+            //check condition for max number using CompareTo method.
+            if (fisrtNum.CompareTo(secondNum) > 0 && fisrtNum.CompareTo(thirdNum) > 0)
+            {
+                Console.WriteLine("Max number is First Number: " + fisrtNum);
+                return fisrtNum;
+            }
+
+            if (secondNum.CompareTo(fisrtNum) > 0 && secondNum.CompareTo(thirdNum) > 0)
+            {
+                Console.WriteLine("Max number is Second Number: " + secondNum);
+                return secondNum;
+            }
+
+            if (thirdNum.CompareTo(fisrtNum) > 0 && thirdNum.CompareTo(secondNum) > 0)
+            {
+                Console.WriteLine("Max number is Third Number: " + thirdNum);
+                return thirdNum;
+            }
+            else
+            {
+                Console.WriteLine("two or more numbers are same");
+                return default;
+            }
         }
     }
 }
