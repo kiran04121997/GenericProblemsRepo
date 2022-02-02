@@ -8,9 +8,6 @@ namespace GenericProgramsProject
 {
     internal class PrintMethod
     {
-        /*Here created same method for every diff data Types.
-          *To solve this issue we will use Generic Method in next class.
-          */
         public static void ToPrint(int[] array)
         {
             Console.WriteLine("Int Array iterating");
